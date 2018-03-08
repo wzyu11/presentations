@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>CryptoStego - YASS Version - by @pboueke</title>
+  <title>Service Mesh简单介绍</title>
   <meta name="description" content="Presentation for the CryptoStego YASS library">
   <meta name="keywords" content="cryptostego, steganography, steganographic, yass, pboueke">
   <meta name="author" content="Pedro Boueke">
@@ -36,50 +36,25 @@
   <div class="deck-container frame output">
 
     <section class="slide">
-        <div class="title">CryptoStego - YASS</div>
+        <div class="title">Service Mesh</div>
         <hr>
-        <p>
-            <a href="https://pboueke.github.io/CryptoStego/">CryptoStego YASS</a> is a fork of the popular 
-            <a href="http://stego.js.org/">CryptoStego</a> steganographic JavaScript library by Jeffery Zhao. This project 
-            extends the original scope by implementing a new steganographic method alongside the usual
-            2D DCT data hiding inside JPEG images, greatly inspired by the YASS method, proposed here:
+        <p align="left">
+            <a>怎么来的</a> 
+            微服务架构使得一个应用可能有许多个服务组成。每个服务的维护、开发等变得比较简单，
+            服务间的通信成为了问题。要保证服务通信的性能和可靠。
         </p>
-        <blockquote>
-            Solanki, K & Sarkar, Anindya & Manjunath, B. (2007). <b>YASS: Yet Another Steganographic 
-            Scheme That Resists Blind Steganalysis.</b> Lect Notes Comput Sci. 2939. 16-31. 10.1007/978-3-540-77370-2_2.
+        <blockquote align="left">
+            首先服务网格是一个基础设施层，功能在于处理服务间通信，职责是负责实现请求的可靠传递。在实践中，服务网格通常实现为轻量级网络代理，通常与应用程序部署在一起，但是对应用程序透明。
         </blockquote>
-        <div class="author"> Presentation by <a href="https://pboueke.github.io"> Pedro Boueke</a>, November 2017  </div>
     </section>
 
     <section class="slide">
-        <div class="title">CryptoStego</div>
-
-        <blockquote>
-            JS library for steganography with encryption - 
-            Hide text in an image with encryption and obfuscation. Support least significant bit mode and DCT mode.
-        </blockquote>
+        <<div class="title">Service to Service</div>
+        <p></p>
         <ul>
-            <li>Obfuscation - Random initialization of invalid bits</li>
-            <li>Non-linear bit-by-bit message storage</li>
-            <li>Valid bits and their order decided by SHA512-based hash function</li>
-            <li>Password decides the parameter in hash function. Different passwords map message to different locations in the image</li>
-            <li>No signal for password error. Wrong password results in wrong message</li>
-            <li>LSB (Least Significant Bit) mode
-            <ul>
-                <li>Use least significant bits of RGB channels of each pixel to store message</li>
-                <li>Resulting image is visually identical to original one</li>
-                <li>Can only be stored in non-compressed format such as PNG</li>
-            </ul>
-            </li>
-            <li><b>DCT (Discrete cosine transform) mode ~ our focus</b>
-            <ul>
-                <li>Store information by slightly changing lowest frequency component of each block in frequency domain</li>
-                <li>Robust to image compression but stores less data compared to LSB mode</li>
-                <li>Resulting image looks different from original one</li>
-            </ul>
+            <li>Hystrix</li>
+            <li>transwarp tracing lib(熔断、追踪等)</li>
         </ul>
-        <div class="author"> As seen <a href="https://github.com/zeruniverse/CryptoStego"> here</a>.</div>        
-            
     </section>
 
     <section class="slide">
